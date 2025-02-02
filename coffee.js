@@ -16,7 +16,7 @@ document.getElementById('register-btn').addEventListener('click', () => {
 // to highlight a link when scrooled to or clicked on.
 document.addEventListener('DOMContentLoaded', () => {
 const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link'); 
 
 const updateActiveLink = () => {
     sections.forEach((section, index) => {

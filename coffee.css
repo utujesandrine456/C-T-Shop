@@ -151,6 +151,8 @@ nav a:hover::after{
         height:30px;
         margin-left:10px;
         margin-top:10px;
+        border-radius: 50%
+        ;
 }
 
 #cart-toogle:checked + label + form{
