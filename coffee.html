@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="stylesheet" href="coffee.css">
+    <title>COFFEE SHOP</title>
+</head>
+<body>
+<header class="header-container">
+    <nav>
+        <img src="OIP (3).jpg" class="nice">
+        <a href="#home-section" class="nav-link">Home</a>
+        <a href="#About-section" class="nav-link">About</a>
+        <a href="#menu-section" class="nav-link">Menu</a>
+        <a href="#products-section" class="nav-link">Products</a>
+        <a href="#review-section" class="nav-link">Review</a></li>
+        <a href="#contact-section" class="nav-link">Contact</a>
+        <a href="#blogs-section" class="nav-link">Blogs</a>
+        
+        <div class="icons">
+            <div id="register">
+                <input type="checkbox" id="register-toogle">
+                <label for="register-toogle" >
+                    <i class="fa-solid fa-registered" id="register-btn"></i>
+                </label>
+                <div class="main">
+                        <input type="checkbox" aria-hidden="true" id="chk">
+                    <div class="signup">
+                        <form action="Form.php" method="POST">
+                            <label for="chk" aria-hidden="true">Sign up</label>
+                            <input type="text" placeholder="User name" name="name" class="inputs"><br>
+                            <input type="email" placeholder="Email" name="email" class="inputs"><br>
+                            <input type="password" placeholder="Password" name="password" class="inputs" ><br>
+                            <input type="password" placeholder=" Confirm password" name="confirm" class="inputs"><br>
+                            <button id="signup" type="submit">Sign up</button>
+                            
+                        </form>
+                    </div>  
+                    <div class="login">
+                        <form action="Form.php" method="POST">
+                            <label for="chk" aria-hidden="true">Login</label>
+                            <input type="email" placeholder="Email" required  name="email" class="inputs">
+                            <input type="password" placeholder="Password" required  name="password" class="inputs">
+                            <button id="log" type="submit">Login</button>
+                            <pre>                  or                 </pre>
+                            <button id="google">Sign in with Google</button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="checkbox" id="search-toogle">
+                <label for="search-toogle">
+                    <div class="fas fa-search" id="search-btn"></div>
+                </label>
+                <input type="text" id="search">
+            </div> 
+            <div class="shopping">
+                <input type="checkbox" id="cart-toogle">
+                <label for="cart-toogle">
+                    <div class="fas fa-shopping-cart" id="cart-btn"></div>
+                </label>
+                <form id="form3">
+                    <img src="brigitte-tohm-EAay7Aj4jbc-unsplash.jpg" id="one"></img>
+                    <p>Cart Item 01</p><br>
+                    <img src="brigitte-tohm-yRH0JI2S2KA-unsplash.jpg" id="one"></img>
+                    <p>Cart Item 02</p><br>
+                    <img src="jen-p-FoG8lotg7AA-unsplash.jpg" id="one"></img>
+                    <p>Cart Item 03</p><br>
+                    <img src="sandrine.jpg" id="one"></img>
+                    <p>Cart Item 04</p><br>
+                </form>
+            </div>
+            <input type="checkbox" id="menu-toogle">
+            <label for="menu-toogle">
+                <div class="fas fa-bars" id="menu-btn"></div>
+            </label>
+            <div class="menu-links">
+                <a href="#home-section" class="nav-link">Home</a>
+                <a href="#About-section" class="nav-link">About</a>
+                <a href="#menu-section" class="nav-link">Menu</a>
+                <a href="#products-section" class="nav-link">Products</a>
+                <a href="#review-section" class="nav-link">Review</a></li>
+                <a href="#contact-section" class="nav-link">Contact</a>
+                <a href="#blogs-section" class="nav-link">Blogs</a>
+            </div> 
+        </div>
+    </nav>
+</header>
+<section id="home-section" class="section">
+    <h2>FRESH COFFEE IN <br>THE MORNING</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <br>Nulla facere molestias incidunt nemo nam! Quasi, delectus.
+    <br>Atque placeat, magni consequatur autem asperiores alias.
+    <br>libero sit ,dolorum iste laborum corporis veniam!</p>
+    <button id="home-btn">Get It Now</button>
+    <img class="home-image" src="home-removebg-preview.png">
+</section>
+<section id="About-section" class="section">
+    <h1>ABOUT <span>US</span></h1>
+    <img src="menu.jpg" alt="coffee" class="about"></img>
+    <div class="About">
+    <h2>What makes Our Coffee Special</h2>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere,<br>
+        Assumenda officia totam molestiae fugiat recusandae sint ab provident<br>
+        Ullam possimus culpa ad dicta maiores laudantium suscipit esse molestias. <br>
+        Perferendis, repellat?</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Odio blanditiis labore amet, facere id, accusamus aperiam iusto nobis,<br>
+    </p>
+    <button  class="about-btn">Learn More</button>
+    </div>
+</section>
+<section id="menu-section" class="section">
+    <h1>OUR <span>MENU</span></h1>
+    <div class="card up">
+        <h3>Tasy And Healthy</h3>
+        <h3>$15.99 <del>$20.99</del></h3>
+        <img src="brigitte-tohm-EAay7Aj4jbc-unsplash.jpg" alt="" id="icon1"></img>
+        <button  id="menu-butn">Buy Now</button>
+    </div>
+    <div class="card down">
+        <h3>Tasy And Healthy</h3>
+        <h3>$15.99 <del>$20.99</del></h3>
+        <img src="brigitte-tohm-yRH0JI2S2KA-unsplash.jpg" id="icon1"></img>
+        <button  id="menu-butn">Buy Now</button>
+        </div>
+    <div class="card up">
+        <h3>Tasy And Healthy</h3>
+        <h3>$15.99 <del>$20.99</del></h3>
+        <img src="jen-p-FoG8lotg7AA-unsplash.jpg" id="icon1"></img>
+        <button  id="menu-butn">Buy Now</button>
+        
+    </div>
+    <div class="card down">
+        <h3>Tasy And Healthy</h3>
+        <h3>$15.99 <del>$20.99</del></h3>
+        <img src="three.jpg" id="icon1"></img>
+        <button  id="menu-butn">Buy Now</button>
+    </div>
+    <div class="card up">
+        <h3>Tasy And Healthy</h3>
+        <h3>$15.99 <del>$20.99</del></h3>
+        <img src="one.jpg" id="icon1">
+        <button  id="menu-butn">Buy Now</button>
+    </div>
+    <div class="card down">
+        <h3>Tasy And Healthy</h3>
+        <h3>$15.99 <del>$20.99</del></h3>
+        <img src="two.jpg" id="icon1">
+        <button  id="menu-butn">Buy Now</button>
+    </div>
+</section>
+<div class="container" >
+    <section id="products-section" class="section">
+        <h1>OUR <span>PRODUCTS</span></h1>
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img  id="slide-1" src="page1.jpg">
+                <img  id="slide-2" src="page2.jpg">
+                <img  id="slide-3" src="page3.jpg">
+                <img  id="slide-4" src="page4.jpg">
+                <img  id="slide-5" src="page5.jpg">
+            </div>
+            <div class="slider-nav">
+                <a href="#slide-1" ></a>
+                <a href="#slide-2" ></a>
+                <a href="#slide-3" ></a>
+                <a href="#slide-4" ></a>
+                <a href="#slide-5" ></a>
+            </div>
+        </div>
+    </section>
+</div>
+<section id="review-section" class="section">
+    <h1>OUR <span>REVIEW</span></h1>
+    <div class="cardy one">
+        <div class="review-icons">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-eye"></i>
+        </div>
+        <img src="product1.jpg" alt="" id="icon2"></img>
+        <h3>Tasy And Healthy</h3>
+        <h3>$15.99 <del>$20.99</del></h3>
+        <button  id="review-butn">Buy Now</button>
+    </div>
+    <div class="cardy one">
+        <div class="review-icons">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-eye"></i>
+        </div>
+        <img src="product2.jpg" id="icon2"></img>
+        <h3>Tasy And Healthy</h3>
+        <h3>$15.99 <del>$20.99</del></h3>
+        <button  id="review-butn">Buy Now</button>
+    </div>
+    <div class="cardy one">
+        <div class="review-icons">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-eye"></i>
+        </div>
+        <img src="product3.jpg" id="icon2">
+        <h3>Tasty And Healthy</h3>
+        <h3>$15.99 <del>$20.99</del></h3> 
+        <button id="review-butn">Buy Now</button>
+    </div>
+</section>
+<section id="contact-section" class="section">
+    <h1>OUR <span>CONTACT</span></h1>
+    <form class="form4">
+        <h6>CONTACT US</h6>
+        <label for="">NAME:</label>
+        <input type="text" name="email" placeholder="Username" class="contact"><br>
+        <label for="">PHONE:</label>
+        <input type="" name="Phone" placeholder="Phone" class="contact"><br>
+        <label for="">ADDRESS:</label>
+        <input type="email" name="address" placeholder="Email" class="contact"><br>
+        <label for="">PASSWORD:</label>
+        <input type="password" name="password" placeholder="Password" class="contact"><br><br>
+        <input type="submit" value="Submit" id="contact-btn">
+        <hr>
+
+        <div class="foot">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </form>
+</section>
+<section id="blogs-section" class="section">
+    <h1>OUR <span>BLOGS</span></h1>
+    <div class="cardi two">
+        <img src="blogs1.jpg" id="icon3"></img>
+        <button  id="menu-butn">Learn More</button>
+        <h3>Tasy And Refreshing Coffee</h3>
+        <h3 id="Admin">By Admin /21st May, 2021</h3>
+        
+    </div>  
+    <div class="cardi two">
+        <img src="blogs2.jpg" id="icon3"></img>
+        <button  id="menu-butn">Learn More</button>
+        <h3>Tasy And Refreshing Coffee</h3>  
+        <h3 id="Admin">By Admin /21st May, 2021</h3>
+
+    </div>
+    <div class="cardi two">
+        <img src="blogs3.jpg" id="icon3"></img>
+        <button  id="menu-butn">Learn More</button>
+        <h3>Tasy And Refreshing Coffee</h3>
+        <h3 id="Admin">By Admin /21st May, 2021</h3>
+
+    </div>
+</section>
+<footer>
+    <div class="footer">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-twitter"></i></a>
+        <a href=""><i class="fa-brands fa-google-plus-g"></i></a>
+        <a href=""><i class="fa-brands fa-youtube"></i></a>
+    </div>
+    <div class="link">
+        <a href="#home-section" onclick="">Home</a>
+        <a href="#About-section" onclick="">About</a>
+        <a href="#menu-section" onclick="">Menu</a>
+        <a href="#products-section" onclick="">Products</a>
+        <a href="#review-section" onclick="">Review</a></li>
+        <a href="#contact-section" onclick="">Contact</a>
+        <a href="#blogs-section" onclick="">Blogs</a>
+    </div>
+    <address>Email: utujesandrine456@gmail.com</address>
+    <h5>Tel: 0785805869</h5>
+    <h3 id="Admin">© 2025 Coffee shop. All Rights Reserved.</h3>
+</footer>
+<script src="coffee.js"></script>
+</body>
+</html>
+
+
+ 
