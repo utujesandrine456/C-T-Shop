@@ -12,7 +12,7 @@ html,body{
 }
 body{
     margin-top: 60px;
-    background-image: url(img.jpg);
+    background-image: url(photos/img.jpg);
     background-size:cover;
     background-position:center;
    
@@ -169,7 +169,7 @@ nav a:hover::after{
     display: none;
     width: 280px;
     height: 450px;
-    background-image: url("Form.jpg");
+    background-image: url("photos/Form.jpg");
     background-size: cover;
     box-shadow: 5px 20px 50px rgb(0, 0, 0);
     border-radius: 10px;
@@ -238,7 +238,7 @@ nav a:hover::after{
 .login{
     height:460px;
     width:280px;
-    background-image: url("login.jpg");
+    background-image: url("photos/login.jpg");
     background-size: cover;
     border-radius:60% / 10%;
     transform:translateY(-180px);
