@@ -26,65 +26,101 @@ header{
 header,nav,.header-container{
     width:100%;
 }
-.nice{
+.logo-image .nice{
     border:2px solid chocolate;
     width:100px;
     height:100px;
     border-radius: 50%;
     cursor: pointer;
 }   
+
 /* This is the starting of the navbar that is containing the links that references different sections that are on the page. */
 nav{
-    padding:15px 0;
     position:fixed;
     top:0;
     left:0;
+    padding:15px 0;
     z-index:1000;
     background-color:rgba(0, 0, 0, 0.7);
+    width: 100%;
+    padding-bottom: 15px;
+    border-radius: 10px;
 }
-nav a{
-    margin:20px;
+
+.nav-links{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-left: -350px;
+    margin-top: -40px;
+    padding: 0;
+    font-weight: 600;
+}
+
+.nav-links a{
     font-size:20px;
-    font-weight: bold;
     color:white;
-    transition: color 0.3s;
+    text-decoration:none;
+    margin:0;
+    transition:color 0.3s;
     position: relative;
-    line-height: 60px;
+    border-radius: 10px;
 }
-nav a:hover{
+
+.nav-links a:hover{
+    cursor: pointer;
     color: orange;
+    border-radius: 10px;
 }
-nav a::after{
+
+nav .nav-links a::after{
     content:"";
     position:absolute;
-    left:0px;
-    bottom:0px;
-    background-color:orange;
-    width:100%;
+    left:0;
+    bottom:0;
     height:3px;
-    transform-origin: left;
+    background-color:orange;
+    border-radius: 10px;
+    width:100%;
     transform: scaleX(0);
+    transform-origin: left;
     transition: transform 0.3s ease;
 }
+
 nav a:hover::after{
     transform: scaleX(1);
 }
 .nav-link.active {
     color: orange;
-    border-bottom-style: 2px solid orange;
 }
-/* This is the end of the navbar of links.*/
+
 
 /* This are the icons that are in the header that provide more information and also helps one to interact with the html page. */
-.icons{
-    float:right;
-    font-size: 20px;
-    color:white;
-    margin-top:80px;
-    position:relative;
-    display: flex;
+.main {
+    display: none;
+    position: absolute;
+    top: 120px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
 }
 
+#register-toggle:checked + label + .main {
+    display: block;
+}
+.icons {
+    display: flex;
+    justify-content: flex-end; /* right align */
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    margin-top: -20px;
+    position: relative;
+    gap: 30px; /* add spacing instead of margin on each icon */
+}
+#register iframe{
+    width: 100%;
+}
 #search-btn, #cart-btn, #register-btn, #menu-btn{
     margin-right:30px;
     cursor:pointer;
@@ -143,16 +179,32 @@ nav a:hover::after{
 #form3 p{
         display:inline-block;
         align-items: center;
-        margin: 10px 0;
+        transition: color 0.4s;
+        font-size: 20px;
+        margin: 0 0 5px 0;
 }
 
+#form3 p:hover{
+    cursor:pointer;
+    color: black;
+}
+#form3 i{
+    color: black;
+    position: relative;
+    top: 23px;
+    left: -20px;
+    float: right;
+}
+#form3 i:hover{
+    cursor: pointer;
+    color: rgb(51, 51, 51)
+}
 #one{
         width:30px;
         height:30px;
         margin-left:10px;
         margin-top:10px;
-        border-radius: 50%
-        ;
+        border-radius: 50%;
 }
 
 #cart-toogle:checked + label + form{
@@ -162,176 +214,11 @@ nav a:hover::after{
         background-color:rgba(234, 156, 100, 0.7);
         transform: translateY(40px);
 }
-/* This is the end of the cart toogle icon. */
-
-/* This is tha class containing a signup and also a login form that will display once one clicks one the register icon. */
-.main {
-    display: none;
-    width: 280px;
-    height: 450px;
-    background-image: url("photos/Form.jpg");
-    background-size: cover;
-    box-shadow: 5px 20px 50px rgb(0, 0, 0);
-    border-radius: 10px;
-    position: absolute;
-    top: 57px;
-    left: -200px;
-    box-sizing: border-box;
-    overflow: hidden;
-    transition: 0.8s ease-in-out;
-}
-
-#register-toggle:checked + label + .main {
-   display: block;
-}
-#signup, #log, #google {
-    width: 100%;
-    margin-top: 20px;
-}   
-.signup{
-    position:relative;
-    width:100%;
-    height:100%;
-}
-.inputs{
-    width:190px;
-    height: 30px;
-    margin-left:43px;
-    margin-bottom:17px;
-    background-color: white;
-    border: none;
-    border-radius: 5px;
-    font-family: cursive;
-}
-.inputs::placeholder{
-    padding-left:7px;
-}
 #chk{
     display: none;
 }
-#signup{
-    width:175px;
-    height: 30px;
-    margin-left:50px;
-    margin-top: 17px;
-    background-color: rgba(49, 133, 216, 0.7);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-family: cursive;
-} 
-#signup:hover{
-    background-color: rgba(15, 59, 103, 0.7);
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
-} 
-.main label{
-    color:white;
-    font-size:1.8em;
-    justify-content: center;
-    display: flex;
-    margin:40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-} 
-.login{
-    height:460px;
-    width:280px;
-    background-image: url("photos/login.jpg");
-    background-size: cover;
-    border-radius:60% / 10%;
-    transform:translateY(-180px);
-    transition: 0.8s ease-in-out;
-    margin-top:75px;
-    position: relative;
-}
-.login label{
-    color: rgb(33, 88, 142);
-    transform: scale(0.6);
-}
-#chk:checked ~ .login{
-    transform: translateY(-470px);
-}
-#chk:checked ~ .login label{
-    transform: scale(1);
-}
-#chk:checked ~ .signup label{
-    transform: scale(0.6);
-}
-#login{
-    width:190px;
-    height: 30px;
-    margin-left:43px;
-    margin-top: 14px;
-    background-color:rgba(66, 121, 176, 0.7);
-    border: none;
-    border-radius: 5px;
-    font-family: cursive;
-}
-#login::placeholder{
-    color:black;
-}
-#log{
-    width:120px;
-    height: 30px;
-    margin-left:75px;
-    margin-top: 17px;
-    background-color: rgba(8, 47, 87, 0.7);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-family: cursive;
-}
-#log:hover{
-    background-color: rgba(54, 75, 94, 0.7);
-    transition: 0.5s ease-in-out;
-    cursor: pointer;   
-}
-pre{
-    padding-top: 10px;
-}
-#google{
-    width:190px;
-    height: 30px;
-    margin-left:45px;
-    margin-top: 5px;
-    background-color: rgba(8, 47, 87, 0.7);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-family: cursive;
-}
-#google:hover{
-    background-color: rgba(54, 75, 94, 0.7);
-    transition: 0.5s ease-in-out;
-    cursor: pointer;  
-}
-/* This is the end of the .main class which contains the .login and also .signup forms. */
 
-/* these are the codes of the slides on the page that are showing the products that we sell */
-.link{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-}
-.link a{
-    font-size:20px;
-    color:white;
-    text-decoration:none;
-    margin:0;
-    transition:color 0.3s;
-}
-.link a:hover{
-    color:orange;
-}
-address, h5{
-    cursor: pointer;
-    color: white;
-}
-
+/* This is the end of the cart toogle icon. */
 
 /* These are the codes that are showing the footer that contain more information about my website. */
 footer{
@@ -378,6 +265,28 @@ footer{
 .footer i{
     font-size:25px;
     color:black;
+}
+
+.link{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+.link a{
+    font-size:20px;
+    color:white;
+    text-decoration:none;
+    margin:0;
+    transition:color 0.3s;
+}
+.link a:hover{
+    color:orange;
+}
+address, h5{
+    cursor: pointer;
+    color: white;
 }
 /* The end of the footer codes ends by here. */
 
@@ -510,64 +419,146 @@ h3{
 /* End of Menu section. */
 
 /* Product section. */
-#products-section{
+#products-section {
     background-color: rgba(30, 23, 23, 0.7);
     padding-top: 60px;
+    position: relative;
+    height: 800px; 
 }
 /* Slides on the page showing our products. */
- .contanier{
-    position: relative;
-    margin-top: 50px;
-    scroll-behavior: smooth;
-    overflow: hidden;
-}
-
-.slider{
-    display: flex;
-    aspect-ratio: 16 / 9;
-    overflow-x: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth ;
-    box-shadow: 0 1.5rem 3rem -0.75rem hlsa(0, 0%, 0%, 0.25);
-    border-radius: 0.5rem;
-    margin: 50px;
-}
-
-.slider img{
-    flex: 1 0 100%;
-    scroll-snap-align: start;
-}
-
-.slider-wrapper{
-    position: relative;
-    max-width: 48rem;
-    margin: 0 auto;
-}
-
-.slider-nav{
-    display: flex;
-    column-gap: 1rem;
+.container{
     position: absolute;
-    bottom: 1.25rem;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    z-index:1;
-}
-.slider-nav a{
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background-color: #fff;
-    opacity: 0.75;
-    transition: opacity ease 250ms;
-    cursor:pointer;
-    display: inline-block;
-} 
-.slider-nav a:hover{
-transform: scale(1.3);
-opacity:1; 
+    transform:  translate(-50%, -50%);
+    width: 900px;
+    height: 500px;
+    overflow-x: hidden;
 }
 
+.container .slide .item{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s ;
+}
+.slide .item:nth-child(1), .slide .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0 , 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+.slide .item:nth-child(3){
+    left: 45%;
+}
+.slide .item:nth-child(4){
+    left: calc(45% + 220px);
+}
+.slide .item:nth-child(5){
+    left: calc(45% + 440px);
+}
+.slide .item:nth-child(n + 6){
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+
+.item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: #eee;
+    transform: translate(0, -50%);
+    font-family: cursive;
+    display: none;
+}
+.slide .item:nth-child(2) .content{
+    display: block;
+}
+
+.content .name{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out  1 forwards;
+}
+.content .des{
+    margin: 10px 0 20px 0;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+.container .content button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    margin: -10px 0 0  10px;
+    animation: animate 1s ease-in-out 0.6s  1 forwards;
+}
+
+@keyframes animate{
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+.container .button {
+    position: absolute;
+    bottom: 50px;
+    left: 45%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px; 
+}
+
+.container .button button {
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin-right:-50px;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .button button:hover{
+    background-color: rgb(181, 154, 104);
+    transform: scale(1.05);
+}
+
+.container .button i{
+    text-align: center;
+    color: white;
+}
+#slides-btn{
+    position: relative;
+    top: 540px;
+    left:400px;
+}
 /* End of the slide codes. */
 /* end of Product section. */
 

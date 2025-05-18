@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-D</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .headers{
+            padding: 0;
+            margin: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        .main-container {
+            display: flex;
+            height: 100vh;
+        }
+        
+        .right-side-container h3{
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .right-side-container h1 {
+            font-family: 'Sofia', cursive;
+            font-size: 25px;
+            margin:0  0  20px 40px;
+            position: relative;
+            top:10px;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+            border-radius: 50%;
+            margin: -60px 0 20px -20px;
+        }
+       
+      
+        .right-side-container {
+            width: 250px;
+            background-color: #2c1906;
+            color: white;
+            padding: 20px;
+        }
+      
+        .sidebar {
+            width: 250px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            height: 100vh;
+            position: fixed;
+            transition: all 0.3s;
+        }
+
+        .sidebar-header {
+            padding: 0 20px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-header h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-header h2 i {
+            color: var(--secondary-color);
+        }
+
+        .sidebar-menu {
+            padding: 20px 0;
+        }
+
+        .menu-category {
+            padding: 10px 20px;
+            color: var(--light-color);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .menu-item {
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .menu-item:hover {
+            background-color: #573716;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .menu-item.active {
+            background-color: #573716;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .menu-item i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .submenu {
+            padding-left: 40px;
+            display: none;
+        }
+
+        .submenu.show {
+            display: block;
+        }
+
+        .submenu-item {
+            padding: 8px 0;
+            display: block;
+            color: var(--light-color);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .submenu-item:hover {
+            color: white;
+        }
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        .form-1:hover, .form-2:hover, .form-3:hover, .form-4:hover{
+            cursor: pointer;
+            transition: 0.3s ease;
+            scale: 1.02;
+        }
+        .main-content h1 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        
+        .form-1, .form-2, .form-3, .form-4 {
+            background-color: #ffffff;
+            padding: 20px 10px 20px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: inline-block;
+            width: 22.5%;
+            margin-right: 2%;
+            vertical-align: top;
+        }
+
+        .form-1 h2, .form-2 h2, .form-3 h2, .form-4 h2 {
+            margin-top: 10px;
+            color: #2c3e50;
+            font-weight: 500;
+            padding-left: 10px;
+        }
+
+        .form-1 h4, .form-2 h4, .form-3 h4, .form-4 h4 {
+            color: #7f8c8d;
+            font-weight: 500;
+            padding-top:10px;
+        }
+
+        .form-1 h3, .form-2 h3, .form-3 h3, .form-4 h3{
+            font-weight: 500;
+            color: #93571B;
+        }
+        .form-1 i, .form-2 i, .form-3 i, .form-4 i {
+            font-size: 20px;
+            color: black;
+            float: right;
+            position: relative;
+            top: -20px;
+        }
+
+        .recent-orders {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-top: 35px;
+        }
+
+        .recent-orders h2 {
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        tr:hover{
+            cursor: pointer;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f9f9f9;
+            color: var(--dark-color);
+            font-weight: 600;
+            border-radius: 5px;
+        }
+
+        .status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status.delivering {
+            background-color: #FFF3E0;
+            color: #FF9800;
+        }
+
+        .status.completed {
+            background-color: #E8F5E9;
+            color: #4CAF50;
+        }
+        .user-profile {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            top:35px;
+            left: 1100px;
+        }
+
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .user-profile span{
+            font-weight: 600;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="right-side-container">
+            <div class="headers">
+                <h1>Coffee Shop</h1>
+                <img src="../photos/OIP (3).jpg" alt="logo" class="logo"/>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="menu-category">Dashboard Overview</div>
+                
+                <div class="menu-item active" id="dashboard-menu">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </div>
+                
+                <div class="menu-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Orders</span>
+                </div>
+                
+                <div class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>Customers</span>
+                </div>
+                
+                <div class="menu-item">
+                    <i class="fas fa-coffee"></i>
+                    <span>Products</span>
+                </div>
+                
+                <div class="menu-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Delivery</span>
+                </div>
+                
+                <div class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <h1>Dashboard Overview</h1>
+            <div class="user-profile">
+                <img src="sandrine.jpg" alt="User">
+                <span>Sangwa</span>
+            </div>
+            <div class="form-1">
+                <h3>Total Orders</h3><i class="fa-solid fa-cart-shopping"></i>
+                <h2>1,234</h2>
+                <h4>+12% from last month</h4>
+            </div>
+            <div class="form-2">
+                <h3>Active Deliveries</h3><i class="fa-solid fa-truck"></i>
+                <h2>42</h2>
+                <h4>Current active</h4>
+            </div>
+            <div class="form-3">
+                <h3>Total Revenue</h3><i class="fa-solid fa-dollar-sign"></i>
+                <h2>$23,456</h2>
+                <h4>This month</h4>
+            </div>
+            <div class="form-4">
+                <h3>Customers</h3><i class="fa-solid fa-users"></i>
+                <h2>892</h2>
+                <h4>Total registered</h4>
+            </div>
+
+            <div class="recent-orders">
+                <h1>Recent Orders</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#12345</td>
+                            <td>John Doe</td>
+                            <td>2x Espresso, 1x Latte</td>
+                            <td><span class="status delivering">Delivering</span></td>
+                            <td>$18.50</td>
+                        </tr>
+                        <tr>
+                            <td>#12344</td>
+                            <td>Jane Smith</td>
+                            <td>1x Green Tea, 2x Cookies</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>$12.75</td>
+                        </tr>
+                        <tr>
+                            <td>#12343</td>
+                            <td>Robert Johnson</td>
+                            <td>3x Cappuccino</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>$15.00</td>
+                        </tr>
+                        <tr>
+                            <td>#12342</td>
+                            <td>Emily Davis</td>
+                            <td>1x Americano, 1x Croissant</td>
+                            <td><span class="status delivering">Delivering</span></td>
+                            <td>$10.25</td>
+                        </tr>
+                        <tr>
+                            <td>#12341</td>
+                            <td>Michael Brown</td>
+                            <td>1x Mocha, 2x Donuts</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>$14.50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

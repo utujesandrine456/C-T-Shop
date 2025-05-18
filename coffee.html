@@ -10,47 +10,26 @@
 </head>
 <body>
 <header class="header-container">
+    
     <nav>
-        <img src="photos/OIP (3).jpg" class="nice">
-        <a href="#home-section" class="nav-link">Home</a>
-        <a href="#About-section" class="nav-link">About</a>
-        <a href="#menu-section" class="nav-link">Menu</a>
-        <a href="#products-section" class="nav-link">Products</a>
-        <a href="#review-section" class="nav-link">Review</a></li>
-        <a href="#contact-section" class="nav-link">Contact</a>
-        <a href="#blogs-section" class="nav-link">Blogs</a>
-        
+        <div class="logo-image">
+            <img src="photos/OIP (3).jpg" class="nice">
+        </div>
+        <div class="nav-links">
+            <a href="#home-section" class="nav-link">Home</a>
+            <a href="#About-section" class="nav-link">About</a>
+            <a href="#menu-section" class="nav-link">Menu</a>
+            <a href="#products-section" class="nav-link">Products</a>
+            <a href="#review-section" class="nav-link">Review</a></li>
+            <a href="#contact-section" class="nav-link">Contact</a>
+            <a href="#blogs-section" class="nav-link">Blogs</a>
+        </div>
         <div class="icons">
             <div id="register">
                 <input type="checkbox" id="register-toogle">
                 <label for="register-toogle" >
                     <i class="fa-solid fa-registered" id="register-btn"></i>
                 </label>
-                <div class="main">
-                        <input type="checkbox" aria-hidden="true" id="chk">
-                    <div class="signup">
-                        <form action="Form.php" method="POST">
-                            <label for="chk" aria-hidden="true">Sign up</label>
-                            <input type="text" placeholder="User name" name="name" class="inputs"><br>
-                            <input type="email" placeholder="Email" name="email" class="inputs"><br>
-                            <input type="password" placeholder="Password" name="password" class="inputs" ><br>
-                            <input type="password" placeholder=" Confirm password" name="confirm" class="inputs"><br>
-                            <button id="signup" type="submit">Sign up</button>
-                            
-                        </form>
-                    </div>  
-                    <div class="login">
-                        <form action="Form.php" method="POST">
-                            <label for="chk" aria-hidden="true">Login</label>
-                            <input type="email" placeholder="Email" required  name="email" class="inputs">
-                            <input type="password" placeholder="Password" required  name="password" class="inputs">
-                            <button id="log" type="submit">Login</button>
-                            <pre>                  or                 </pre>
-                            <button id="google">Sign in with Google</button>
-                        </form>
-                        
-                    </div>
-                </div>
             </div>
             <div class="search-container">
                 <input type="checkbox" id="search-toogle">
@@ -65,16 +44,29 @@
                     <div class="fas fa-shopping-cart" id="cart-btn"></div>
                 </label>
                 <form id="form3">
-                    <img src="photos/brigitte-tohm-EAay7Aj4jbc-unsplash.jpg" id="one"></img>
-                    <p>Cart Item 01</p><br>
-                    <img src="photos/brigitte-tohm-yRH0JI2S2KA-unsplash.jpg" id="one"></img>
-                    <p>Cart Item 02</p><br>
-                    <img src="photos/jen-p-FoG8lotg7AA-unsplash.jpg" id="one"></img>
-                    <p>Cart Item 03</p><br>
-                    <img src="photos/" id="one"></img>
-                    <p>Cart Item 04</p><br>
+                    <div class="cart-item">
+                        <img src="photos/brigitte-tohm-EAay7Aj4jbc-unsplash.jpg" id="one">
+                        <p>Cart Item 01</p>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div class="cart-item">
+                        <img src="photos/brigitte-tohm-yRH0JI2S2KA-unsplash.jpg" id="one">
+                        <p>Cart Item 02</p>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div class="cart-item">
+                        <img src="photos/jen-p-FoG8lotg7AA-unsplash.jpg" id="one">
+                        <p>Cart Item 03</p>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div class="cart-item">
+                        <img src="photos/StockCake-Artistic Coffee Spread_1727265272.jpg" id="one">
+                        <p>Cart Item 04</p>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
                 </form>
             </div>
+            
             <input type="checkbox" id="menu-toogle">
             <label for="menu-toogle">
                 <div class="fas fa-bars" id="menu-btn"></div>
@@ -88,6 +80,9 @@
                 <a href="#contact-section" class="nav-link">Contact</a>
                 <a href="#blogs-section" class="nav-link">Blogs</a>
             </div> 
+        </div>
+        <div class="main">
+            <iframe src="CRUD-2025/public/Form-CRUD.html" width="100%" height="500px" style="border: none;" ></iframe>
         </div>
     </nav>
 </header>
@@ -155,27 +150,77 @@
         <button  id="menu-butn">Buy Now</button>
     </div>
 </section>
-<div class="container" >
-    <section id="products-section" class="section">
-        <h1>OUR <span>PRODUCTS</span></h1>
-        <div class="slider-wrapper">
-            <div class="slider">
-                <img  id="slide-1" src="photos/page1.jpg">
-                <img  id="slide-2" src="photos/page2.jpg">
-                <img  id="slide-3" src="photos/page3.jpg">
-                <img  id="slide-4" src="photos/page4.jpg">
-                <img  id="slide-5" src="photos/page5.jpg">
+
+<section id="products-section" class="section">
+    <h1>OUR <span>PRODUCTS</span></h1>
+    <div class="container">
+        <div class="slide">
+    
+            <div class="item" style="background-image: url(1d552bad63735beaecfc3bca480e8a2d.jpg);" >
+                <div class="content">
+                    <div class="name">Rwandan Coffee</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut aperiam </div>
+                    <button class="product-btn">See More</button>
+                </div>
             </div>
-            <div class="slider-nav">
-                <a href="#slide-1" ></a>
-                <a href="#slide-2" ></a>
-                <a href="#slide-3" ></a>
-                <a href="#slide-4" ></a>
-                <a href="#slide-5" ></a>
+            <div class="item" style="background-image: url(02fd1ce98faaa6fe249a044325fc18b0.jpg);" >
+                <div class="content">
+                    <div class="name">Chinese Tea</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut aperiam </div>
+                    <button class="product-btn">See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(03cebd2282a0dd2ee0524b648b194143.jpg);" >
+                <div class="content">
+                    <div class="name">Coffee Lovers</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut aperiam </div>
+                    <button class="product-btn">See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(8eae597f12c85d4287da80947cd04f08.jpg);" >
+                <div class="content">
+                    <div class="name">Fineland's Tea</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut aperiam </div>
+                    <button class="product-btn">See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(326970021deee2de86ebd3cfef3f8a36.jpg);" >
+                <div class="content">
+                    <div class="name">Iceland's Coffee</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut aperiam </div>
+                    <button class="product-btn">See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(ddb879aa0b8617ca54b47c3abadb2bcc.jpg);" >
+                <div class="content">
+                    <div class="name">Australian Tea</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut aperiam </div>
+                    <button class="product-btn">See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(3052c743e4c487d2d5132263cb0a3cf2.jpg);" >
+                <div class="content">
+                    <div class="name">Netherland's Tea</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut aperiam </div>
+                    <button class="product-btn">See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(9d209d76f4a0773a4034fa2839ebf7fe.jpg);" >
+                <div class="content">
+                    <div class="name">Ireland's Coffee</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut aperiam </div>
+                    <button class="product-btn">See More</button>
+                </div>
             </div>
         </div>
-    </section>
-</div>
+        <div class="button">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+    <button id="slides-btn">Get It Now</button>
+</section>
+
 <section id="review-section" class="section">
     <h1>OUR <span>REVIEW</span></h1>
     <div class="cardy one">

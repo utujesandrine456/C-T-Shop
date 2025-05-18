@@ -1,1 +1,10 @@
-photos/
+# ─── Environment variables ─────────────────────────────
+.env
+.env.*          # .env.dev, .env.production, etc.
+*.env           # any file ending in .env
+# ─── Secrets / keys ────────────────────────────────────
+*.key
+*.pem
+# ─── OS / editor clutter (optional extras) ─────────────
+.DS_Store
+*.log
