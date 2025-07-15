@@ -1,1 +1,2 @@
 OpenJDK21U-jdk_x64_windows_hotspot_21.0.6_7.msi filter=lfs diff=lfs merge=lfs -text
+*.msi filter=lfs diff=lfs merge=lfs -text
