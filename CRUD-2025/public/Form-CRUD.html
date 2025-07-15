@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Form</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-end; /* aligns to the right */
+            align-items: center;
+            font-family: cursive;
+            
+        }
+        .main {
+            position: relative; 
+            width: 280px;
+            height: 450px;
+            box-shadow: 5px 20px 50px rgb(0,0,0);
+            border-radius: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+            margin-right: 100px;
+        }
+        #signup-form{
+            padding-top: 20px;
+            background-image: url("../2640449161ff2e4db07f5008f7779963.jpg");
+            background-size: cover;
+            position: relative;
+            width:100%;
+            padding-right: 38px;
+            height:100%;
+        }
+        #chk{
+            display: none;
+        }
+        input{
+            width:190px;
+            height: 30px;
+            margin-left:43px;
+            margin-bottom:17px;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            font-family: cursive;
+        }
+        input::placeholder{
+            padding-left:7px;
+        }
+        
+        #signup{
+            width:175px;
+            height: 30px;
+            margin-left:50px;
+            margin-top: 17px;
+            background-color: rgba(49, 133, 216, 0.7);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-family: cursive;
+        } 
+        #signup:hover{
+            background-color: rgba(15, 59, 103, 0.7);
+            transition: 0.5s ease-in-out;
+            cursor: pointer;
+        } 
+        
+        label{
+            color:white;
+            font-size:2em;
+            justify-content: center;
+            display: flex;
+            margin:40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.5s ease-in-out;
+        } 
+
+        #login-form {
+            height: 460px;
+            width: 280px;
+            background-image: url("../f8efef63c52a27be1c5f0c0c536784b5.jpg");
+            background-size: cover;        
+            background-position: center;   
+            background-repeat: no-repeat;  
+            border-radius: 60% / 10%;      
+            transform: translateY(-20px);
+            transition: 0.8s ease-in-out;  
+            margin-top: -95px;
+            z-index: 2;
+        }
+        
+        #login-form label{
+            color: white;
+            transform: scale(0.6);
+        }
+
+        #chk:checked ~ #login-form{
+            transform: translateY(-400px);
+        }
+
+        #chk:checked ~ #login-form label{
+            transform: scale(1);
+        }
+
+        #chk:checked ~ #signup-form label{
+            transform: scale(0.6);
+        }
+
+        #login{
+            
+            width:190px;
+            height: 30px;
+            margin-left:43px;
+            margin-top: 17px;
+            background-color:rgba(66, 121, 176, 0.7);
+            border: none;
+            border-radius: 5px;
+            font-family: cursive;
+        }
+
+        #login::placeholder{
+            color:black;
+        }
+
+        #log{
+            width:120px;
+            height:30px;
+            margin-left:75px;
+            margin-top: 17px;
+            background-color: rgba(49, 133, 216, 0.7);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-family: cursive;
+        }
+
+        #log:hover{
+            background-color: rgba(15, 59, 103, 0.7);
+            transition: 0.5s ease-in-out;
+            cursor: pointer;   
+        }
+
+        pre{
+            padding-top: 10px;
+            color: white;
+        }
+
+        #google{
+            width:190px;
+            height: 30px;
+            margin-left:45px;
+            margin-top: 5px;
+            background-color: rgba(49, 133, 216, 0.7);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-family: cursive;
+        }
+        
+        #google:hover{
+            background-color: rgba(15, 59, 103, 0.7);
+            transition: 0.5s ease-in-out;
+            cursor: pointer;  
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+            <input type="checkbox" aria-hidden="true" id="chk">
+            
+                <form id="signup-form">
+                    <label for="chk" aria-hidden="true">Sign up</label>
+                    <input type="text" placeholder="User name" name="name" id="name"><br>
+                    <input type="email" placeholder="Email" name="email" id="email"><br>
+                    <input type="password" placeholder="Password" name="password" id="password"><br>
+                    <input type="password" placeholder="Confirm Password" name="confirm" id="confirm"><br>
+                    <button id="signup" type="submit" name="submit">Sign up</button>
+                </form>
+            
+                <form id="login-form">
+                    <label for="chk" aria-hidden="true" id="login-label">Login</label>
+                    <input type="email" placeholder="Email" required name="email" id="login-email">
+                    <input type="password" placeholder="Password" required name="password" id="login-password">
+                    <button id="log" type="submit" name="submit">Login</button>
+                    <pre>                  or                 </pre>
+                    <button id="google">Sign in with Google</button>
+                </form>
+             
+    </div>
+    <script>
+            document.getElementById("signup-form").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value; // Correct field name
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirm = document.getElementById("confirm").value; // Get confirm value
+
+            // Check if passwords match
+            if (password !== confirm) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:3000/signup", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, password, confirm }) // Send all required fields
+                });
+
+                const data = await response.json();
+                if (!response.ok) {
+                    throw new Error(data.message || "Signup failed!");
+                }
+                alert(data.message || "Signup successful!");
+            } catch (error) {
+                console.error("Error:", error);
+                alert(error.message || "An error occurred. Please try again.");
+            }
+        });
+
+        
+        // In your login form handler
+        document.getElementById("login-form").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
+
+            try {
+                const response = await fetch("http://localhost:3000/login", {
+                    method: "POST",
+                    credentials: 'include', // Crucial for cookies
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) throw new Error(data.message || "Login failed");
+                
+                alert("Login successful!");
+                // Wait for user to click OK on the alert before redirecting
+                window.parent.postMessage("redirectToHome", "*");
+                
+            } catch (error) {
+                alert(error.message || "Login failed");
+            }
+        });
+    </script>
+</body>
+</html>
